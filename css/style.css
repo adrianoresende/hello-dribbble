@@ -1,0 +1,147 @@
+html,
+body,
+#app {
+  height: 100%;
+}
+.hello-dribbble {
+  color: #fff;
+  background-color: #000;
+  height: 100%;
+}
+.hello-dribbble .hello-dribbble-motion {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../imgs/bg-hellodribbble-small.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+.hello-dribbble h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 90px;
+    letter-spacing: -4px;
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 15px;
+    text-shadow: 0px 0px 20px #000;
+    opacity: 0;
+    transition-delay: 1.3s;
+}
+.hello-dribbble h2 {
+    background: url("../imgs/dribbble.png") no-repeat center center;
+    width: 280px;
+    height: 61px;
+    text-indent: -999em;
+    opacity: 0;
+    transition-delay: 1.6s;
+}
+.hello-dribbble h3 {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    top: 25px;
+    font-size: 14px;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 1.5s, transform 1s;
+    transform: translateY(10px);
+    transition-delay: 2s;
+}
+.hello-dribbble.show .hello-dribbble-motion,
+  .hello-dribbble.show h1,
+  .hello-dribbble.show h2 {
+    opacity: 1;
+}
+.hello-dribbble.show h3 {
+    opacity: .4;
+    transform: translateY(0);
+}
+.hello-dribbble.show .reveal-block {
+    -webkit-animation-name: run-block;
+            animation-name: run-block;
+}
+.hello-dribbble.show .word-hello .reveal-block {
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+}
+.hello-dribbble.show .word-dribbble .reveal-block {
+    -webkit-animation-delay: 1.3s;
+            animation-delay: 1.3s;
+}
+.revealer-block {
+  position: relative;
+  overflow: hidden;
+}
+.revealer-block .reveal-block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+.revealer-block.word-hello {
+    margin: 0 80px 0 0;
+    position: relative;
+    top: 15px;
+}
+.revealer-block.word-hello .reveal-block {
+    background: #3498db;
+}
+.revealer-block.word-dribbble {
+    margin: 0 0 0 80px;
+    position: relative;
+    top: -15px;
+}
+.revealer-block.word-dribbble .reveal-block {
+    background: #f1c40f;
+}
+@-webkit-keyframes run-block {
+  0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+      opacity: 1;
+  }
+  50% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      opacity: 1;
+  }
+}
+@keyframes run-block {
+  0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+      opacity: 1;
+  }
+  50% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      opacity: 1;
+  }
+}
